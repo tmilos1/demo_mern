@@ -1,0 +1,14 @@
+
+.jumbotron {
+  background-image: url(./headImage.jpg);
+  height: 400px;
+  font-weight: 'bold';
+}
+
+.textOverlay {
+  background: rgb(255, 255, 255); /* fallback color */
+  background: rgba(223, 223, 223, 0.7);
+  padding: 10px;
+  max-width: 500px;
+  margin-left: 200px;
+}
