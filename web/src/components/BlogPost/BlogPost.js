@@ -7,7 +7,7 @@ const BlogPost = ({ post, showShortText }) => {
   let dateTime = new Date(post.createdAt)
 
   return (
-    <Card className={[styles.card, "mb-3"].join(' ')}>
+    <Card className={[styles.card, "mt-3", "mb-3"].join(' ')}>
       <Card.Body>
         <Card.Title><Link to={routes.blogPost({ id: post.id })}>{post.title}</Link></Card.Title>
         <Card.Text>
