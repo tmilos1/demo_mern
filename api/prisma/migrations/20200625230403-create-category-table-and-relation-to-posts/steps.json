@@ -3,11 +3,11 @@
   "steps": [
     {
       "tag": "CreateModel",
-      "model": "Contact"
+      "model": "Category"
     },
     {
       "tag": "CreateField",
-      "model": "Contact",
+      "model": "Category",
       "field": "id",
       "type": "Int",
       "arity": "Required"
@@ -17,7 +17,7 @@
       "location": {
         "path": {
           "tag": "Field",
-          "model": "Contact",
+          "model": "Category",
           "field": "id"
         },
         "directive": "default"
@@ -29,7 +29,7 @@
         "tag": "Directive",
         "path": {
           "tag": "Field",
-          "model": "Contact",
+          "model": "Category",
           "field": "id"
         },
         "directive": "default"
@@ -42,7 +42,7 @@
       "location": {
         "path": {
           "tag": "Field",
-          "model": "Contact",
+          "model": "Category",
           "field": "id"
         },
         "directive": "id"
@@ -50,41 +50,34 @@
     },
     {
       "tag": "CreateField",
-      "model": "Contact",
+      "model": "Category",
       "field": "name",
       "type": "String",
       "arity": "Required"
     },
     {
       "tag": "CreateField",
-      "model": "Contact",
-      "field": "email",
-      "type": "String",
-      "arity": "Required"
+      "model": "Category",
+      "field": "posts",
+      "type": "Post",
+      "arity": "List"
     },
     {
       "tag": "CreateField",
-      "model": "Contact",
-      "field": "message",
-      "type": "String",
-      "arity": "Required"
-    },
-    {
-      "tag": "CreateField",
-      "model": "Contact",
-      "field": "createdAt",
-      "type": "DateTime",
-      "arity": "Required"
+      "model": "Post",
+      "field": "category",
+      "type": "Category",
+      "arity": "Optional"
     },
     {
       "tag": "CreateDirective",
       "location": {
         "path": {
           "tag": "Field",
-          "model": "Contact",
-          "field": "createdAt"
+          "model": "Post",
+          "field": "category"
         },
-        "directive": "default"
+        "directive": "relation"
       }
     },
     {
@@ -93,13 +86,34 @@
         "tag": "Directive",
         "path": {
           "tag": "Field",
-          "model": "Contact",
-          "field": "createdAt"
+          "model": "Post",
+          "field": "category"
         },
-        "directive": "default"
+        "directive": "relation"
       },
-      "argument": "",
-      "value": "now()"
+      "argument": "fields",
+      "value": "[categoryId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "category"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "categoryId",
+      "type": "Int",
+      "arity": "Optional"
     }
   ]
 }
