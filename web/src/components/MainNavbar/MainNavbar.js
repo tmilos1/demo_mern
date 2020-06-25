@@ -18,7 +18,6 @@ const MainNavbar = () => {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end" style={{marginRight: "100px"}}>
           <Nav>
             <Link to={routes.home()} className="nav-link">Home</Link>
-            <Link to={routes.about()} className="nav-link">About</Link>
             <Link to={routes.contact()} className="nav-link">Contact</Link>
           </Nav>
         </Navbar.Collapse>
