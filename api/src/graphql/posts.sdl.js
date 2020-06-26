@@ -6,6 +6,8 @@ export const schema = gql`
     title: String!
     body: String!
     createdAt: DateTime!
+    category: Category
+    categoryId: Int
   }
 
   type Query {
@@ -16,11 +18,13 @@ export const schema = gql`
   input CreatePostInput {
     title: String!
     body: String!
+    categoryId: Int
   }
 
   input UpdatePostInput {
     title: String
     body: String
+    categoryId: Int
   }
 
   type Mutation {

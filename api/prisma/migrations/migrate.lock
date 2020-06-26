@@ -3,3 +3,4 @@
 20200625225845-initial-database
 20200625230403-create-category-table-and-relation-to-posts
 20200625230815-category-fk-is-mandatory
+20200626084303-category-id-in-posts-not-mandatory

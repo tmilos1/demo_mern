@@ -11,6 +11,7 @@ export const schema = gql`
 
   type Query {
     contacts: [Contact!]!
+    contact(id: Int!): Contact!
   }
 
   input CreateContactInput {
@@ -26,6 +27,8 @@ export const schema = gql`
   }
 
   type Mutation {
-    createContact(input: CreateContactInput!): Contact
+    createContact(input: CreateContactInput!): Contact!
+    updateContact(id: Int!, input: UpdateContactInput!): Contact!
+    deleteContact(id: Int!): Contact!
   }
 `
